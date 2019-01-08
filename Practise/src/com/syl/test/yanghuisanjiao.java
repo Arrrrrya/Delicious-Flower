@@ -22,8 +22,9 @@ public class yanghuisanjiao {
 	}
 
 	public static void getYHSJ(int n) {
-		int[][] arr = new int[n][n];
+		int[][] arr = new int[n][];
 		for (int i = 0; i < n; i++) {
+			arr[i] = new int[i + 1];
 			for (int j = 0; j <= i; j++) {
 				if (j == 0 || j == i) {
 					arr[i][j] = 1;
@@ -31,10 +32,8 @@ public class yanghuisanjiao {
 					arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
 				}
 				System.out.print(arr[i][j] + "\t");
-				if (j == i) {
-					System.out.println();
-				}
 			}
+			System.out.println();
 		}
 	}
 }
