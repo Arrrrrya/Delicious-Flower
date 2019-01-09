@@ -1,6 +1,5 @@
 package com.syl.test;
 
-import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 /*
@@ -72,7 +71,6 @@ public class WNcalendar {
 		System.out.println("\t" + "\t" + year + "年(" + runStr + ")" + month + "月");
 
 		// 3.计算输入月份第一天是星期几
-		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
 		String date = (year + "-" + month + "-" + "01").toString();
 		String weekDayStr = DateToWeek.dateToWeek(date);
 		int weekday = 0;
