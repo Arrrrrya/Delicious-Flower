@@ -1,6 +1,6 @@
 package com.syl.test;
 
-/* 
+/*
  * .print Pascal's Triangle
  * 
  * 1
@@ -13,6 +13,7 @@ package com.syl.test;
  * 1	7	21	35	35	21	7	1 
  * 
  * @author arya
+ * @syl the bug is not what you see,but what it is.
  *
  */
 public class _001_YHSJ {

@@ -4,6 +4,7 @@ package com.syl.test;
  * .中文类名测试
  * 
  * @author syl
+ * @syl the bug is not what you see,but what it is.
  *
  */
 public class 中文测试 {

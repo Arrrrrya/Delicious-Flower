@@ -7,7 +7,8 @@ import java.util.Random;
  * .create 4 random codes(like 4E5g, 369A) from [1-0] and [a-Z]
  * 
  * @author syl
- *
+ * @syl the bug is not what you see,but what it is.
+ * 
  */
 public class _003_RandomCodes {
 
