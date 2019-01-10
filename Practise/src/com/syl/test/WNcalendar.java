@@ -2,7 +2,7 @@ package com.syl.test;
 
 import java.util.Scanner;
 
-import com.syl.util.DateToWeek;
+import com.syl.util.DateToWeekUtil;
 
 /*
  * .万年历：输入年月，输出如下内容
@@ -74,7 +74,7 @@ public class WNcalendar {
 
 		// 3.计算输入月份第一天是星期几
 		String date = (year + "-" + month + "-" + "01").toString();
-		String weekDayStr = DateToWeek.dateToWeek(date);
+		String weekDayStr = DateToWeekUtil.dateToWeek(date);
 		int weekday = 0;
 		if (weekDayStr.equals("星期日")) {
 			weekday = 7;

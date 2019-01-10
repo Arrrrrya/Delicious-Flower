@@ -11,10 +11,10 @@ import java.util.Date;
  * @author syl
  *
  */
-public class DateToWeek {
+public class DateToWeekUtil {
 
 	public static void main(String[] args) {
-		System.out.println(DateToWeek.dateToWeek("2019-01-09"));
+		System.out.println(DateToWeekUtil.dateToWeek("2019-01-09"));
 	}
 
 	public static String dateToWeek(String datetime) {
