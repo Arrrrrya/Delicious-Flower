@@ -6,14 +6,14 @@ import javax.swing.*;
 import java.io.*;
 
 @SuppressWarnings("serial")
-public class SwingDemo2 extends JFrame {
+public class SwingDemoForSaving extends JFrame {
 	private JLabel name, phone, sex;
 	private JTextField inputName, inputPhone;
 	private JComboBox<String> sexBox;
 	private String[] item = { "男", "女" };
 	private JButton save;
 
-	public SwingDemo2() {
+	public SwingDemoForSaving() {
 		super("信息管理");
 		setSize(240, 300);
 		setLayout(new FlowLayout(FlowLayout.CENTER, 10, 30));
@@ -48,6 +48,7 @@ public class SwingDemo2 extends JFrame {
 					bw.newLine();
 					bw.close();
 				} catch (Exception ex) {
+					System.out.println("fix it, fuck you.");
 				}
 			}
 		});
@@ -70,6 +71,6 @@ public class SwingDemo2 extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		new SwingDemo2();
+		new SwingDemoForSaving();
 	}
 }
