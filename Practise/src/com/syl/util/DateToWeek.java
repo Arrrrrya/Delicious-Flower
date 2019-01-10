@@ -1,4 +1,4 @@
-package com.syl.test;
+package com.syl.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

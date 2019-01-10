@@ -2,6 +2,8 @@ package com.syl.test;
 
 import java.util.Scanner;
 
+import com.syl.util.DateToWeek;
+
 /*
  * .万年历：输入年月，输出如下内容
  * 
