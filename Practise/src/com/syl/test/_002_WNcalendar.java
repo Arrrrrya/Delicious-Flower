@@ -19,28 +19,16 @@ import com.syl.util.DateToWeekUtil;
  *
  */
 public class _002_WNcalendar {
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("请输入年份：");
-		int year = scan.nextInt();
-		System.out.println("请输入月份：");
-		int month = scan.nextInt();
-		scan.close();
 
-		getWnCalendar(year, month);
-	}
-
-	private static void getWnCalendar(int year, int month) {
-		boolean yearFlag;
-		// 1.判断是否是闰年
+	private void getWnCalendar(int year, int month) {
+		boolean isRunNianFlag;
 		if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
-			yearFlag = true;
+			isRunNianFlag = true;
 		} else {
-			yearFlag = false;
+			isRunNianFlag = false;
 		}
 
-		// 2.计算每个月多少天
-		int day = 0;
+		int dayOfMonth = 0;
 		switch (month) {
 		case 1:
 		case 3:
@@ -49,30 +37,29 @@ public class _002_WNcalendar {
 		case 8:
 		case 10:
 		case 12:
-			day = 31;
+			dayOfMonth = 31;
 			break;
 		case 2:
-			if (yearFlag) {
-				day = 29;
+			if (isRunNianFlag) {
+				dayOfMonth = 29;
 			} else {
-				day = 28;
+				dayOfMonth = 28;
 			}
 			break;
 		case 4:
 		case 6:
 		case 9:
 		case 11:
-			day = 30;
+			dayOfMonth = 30;
 			break;
 		default:
 			System.err.println("输入月份非法！");
 			break;
 		}
 
-		String runStr = yearFlag ? "闰年" : "非闰年";
+		String runStr = isRunNianFlag ? "闰年" : "非闰年";
 		System.out.println("\t" + "\t" + year + "年(" + runStr + ")" + month + "月");
 
-		// 3.计算输入月份第一天是星期几
 		String date = (year + "-" + month + "-" + "01").toString();
 		String weekDayStr = DateToWeekUtil.dateToWeek(date);
 		int weekday = 0;
@@ -91,7 +78,6 @@ public class _002_WNcalendar {
 		} else if (weekDayStr.equals("星期六")) {
 			weekday = 6;
 		}
-		// 4.创建一个n排7列的面板
 		System.out.println("日" + "\t" + "一" + "\t" + "二" + "\t" + "三" + "\t" + "四" + "\t" + "五" + "\t" + "六");
 
 		if (weekday != 7) {
@@ -100,11 +86,22 @@ public class _002_WNcalendar {
 			}
 		}
 
-		for (int i = 1; i <= day; i++) {
+		for (int i = 1; i <= dayOfMonth; i++) {
 			System.out.print(i + "\t");
 			if ((i % 7 + weekday) == 7) {
 				System.out.println();
 			}
 		}
+	}
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("请输入年份：");
+		int year = scan.nextInt();
+		System.out.println("请输入月份：");
+		int month = scan.nextInt();
+		scan.close();
+
+		new _002_WNcalendar().getWnCalendar(year, month);
 	}
 }

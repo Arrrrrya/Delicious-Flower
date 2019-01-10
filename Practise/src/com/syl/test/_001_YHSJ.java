@@ -1,7 +1,7 @@
 package com.syl.test;
 
 /*
- * method 打印杨辉三角形
+ * .打印输入杨辉三角
  * 
  * 1
  * 1	1
@@ -16,12 +16,8 @@ package com.syl.test;
  *
  */
 public class _001_YHSJ {
-	public static void main(String[] args) {
-		int n = 10;
-		getYHSJ(n);
-	}
 
-	public static void getYHSJ(int n) {
+	public void getYHSJ(int n) {
 		int[][] arr = new int[n][];
 		for (int i = 0; i < n; i++) {
 			arr[i] = new int[i + 1];
@@ -35,5 +31,10 @@ public class _001_YHSJ {
 			}
 			System.out.println();
 		}
+	}
+
+	public static void main(String[] args) {
+		int n = 10;
+		new _001_YHSJ().getYHSJ(n);
 	}
 }

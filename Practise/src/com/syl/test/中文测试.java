@@ -1,5 +1,11 @@
 package com.syl.test;
 
+/**
+ * .中文类名测试
+ * 
+ * @author syl
+ *
+ */
 public class 中文测试 {
 
 	public void 输入中文() {
