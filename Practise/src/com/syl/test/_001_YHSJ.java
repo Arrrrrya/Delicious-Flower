@@ -15,7 +15,7 @@ package com.syl.test;
  * @author arya
  *
  */
-public class YHSJ {
+public class _001_YHSJ {
 	public static void main(String[] args) {
 		int n = 10;
 		getYHSJ(n);

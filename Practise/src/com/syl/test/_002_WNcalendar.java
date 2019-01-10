@@ -18,7 +18,7 @@ import com.syl.util.DateToWeekUtil;
  * @author syl
  *
  */
-public class WNcalendar {
+public class _002_WNcalendar {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("«Î ‰»ÎƒÍ∑›£∫");
