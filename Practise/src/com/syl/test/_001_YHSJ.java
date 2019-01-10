@@ -1,7 +1,7 @@
 package com.syl.test;
 
 /* 
- * .´òÓ¡Êä³öÑî»ÔÈı½Ç
+ * .print Pascal's Triangle
  * 
  * 1
  * 1	1
