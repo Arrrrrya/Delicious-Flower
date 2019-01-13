@@ -12,8 +12,14 @@ import java.util.ArrayList;
 public class _007_DIYSubString {
 
 	public String mySubString(String strToBeSub, int beginByteIndex, int endByteIndex) {
-		ArrayList<String> strs = new ArrayList<String>();
+		if (null == strToBeSub || "" == strToBeSub || beginByteIndex < 0 || beginByteIndex > endByteIndex) {
+			return "";
+		}
+		if (endByteIndex > strToBeSub.getBytes().length) {
+			endByteIndex = strToBeSub.getBytes().length;
+		}
 
+		ArrayList<String> strs = new ArrayList<String>();
 		for (int i = 0; i < strToBeSub.length(); i++) {
 			strs.add(strToBeSub.charAt(i) + "");
 		}
@@ -58,8 +64,8 @@ public class _007_DIYSubString {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(new _007_DIYSubString().mySubString("bugIsbug", 3, 5));
-//		System.out.println(new _007_DIYSubString().mySubString("虫子is虫子", 1, 3));
+//		System.out.println(new _007_DIYSubString().mySubString("bugIsbug", 3, 5));
+		System.out.println(new _007_DIYSubString().mySubString("虫子is虫子", 0, 1));
 	}
 
 }
