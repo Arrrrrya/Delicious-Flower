@@ -49,11 +49,7 @@ public class _009_GomokuGame {
 				if (failStep == 2) {
 					System.out.println("2次落子无效，直接判负！");
 					endFlag = true;
-					if (player.equals("player1")) {
-						winner = "player2";
-					} else {
-						winner = "player1";
-					}
+						winner = switchPlayer(player);
 					break;
 				}
 				continue;
