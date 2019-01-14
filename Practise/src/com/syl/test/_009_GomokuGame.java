@@ -9,6 +9,10 @@ import java.util.Scanner;
  * @syl the bug is not what you see,but what it is.
  */
 public class _009_GomokuGame {
+	public String chess1 = "o";
+	public String chess2 = "x";
+	public String player1 = "player1";
+	public String player2 = "player2";
 
 	public void startGomokuGame(int n) {
 		System.out.println("【五子棋大战】");
@@ -25,7 +29,7 @@ public class _009_GomokuGame {
 		boolean winFlag = false;
 		String winner = "";
 		String chess = "";
-		String player = "player1";
+		String player = player1;
 		String stepInfo = "";
 		int i = 0;
 		int j = 0;
@@ -56,9 +60,9 @@ public class _009_GomokuGame {
 				continue;
 			} else {
 				if (player.equals("player1")) {
-					chess = "o";
+					chess = chess1;
 				} else {
-					chess = "x";
+					chess = chess2;
 				}
 				chessBoard[i - 1][j - 1] = chess;
 				if (checkWin(chessBoard, n, chess)) {
@@ -74,7 +78,7 @@ public class _009_GomokuGame {
 		if(endFlag) {
 			System.out.println(winner + " 获胜");
 		}else if(winFlag) {
-			System.out.println(winner + " 战胜了 " + (winner.equals("player1") ? switchPlayer(winner) : "player1") + "!");
+			System.out.println(winner + " 战胜了 " + (winner.equals(player1) ? switchPlayer(winner) : player1) + "!");
 		}
 		scan.close();
 	}
@@ -117,17 +121,17 @@ public class _009_GomokuGame {
 	}
 
 	public String switchPlayer(String player) {
-		if (player.equals("player1")) {
-			player = "player2";
+		if (player.equals(player1)) {
+			player = player2;
 		} else {
-			player = "player1";
+			player = player1;
 		}
 		return player;
 	}
 
 	public boolean stepIsOK(String[][] chessBoard, int n, int i, int j) {
-		if (i < 1 || i > n || j < 1 || j > n || chessBoard[i - 1][j - 1].equals("o")
-				|| chessBoard[i - 1][j - 1].equals("x")) {
+		if (i < 1 || i > n || j < 1 || j > n || chessBoard[i - 1][j - 1].equals(chess1)
+				|| chessBoard[i - 1][j - 1].equals(chess2)) {
 			return false;
 		}
 		return true;
