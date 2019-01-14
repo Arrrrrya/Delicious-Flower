@@ -75,57 +75,55 @@ public class _009_GomokuGame {
 
 	//请问怎么优化，感觉好蠢
 	public boolean checkWin(String[][] chessBoard, int n) {
-		for (int i = 0; i < chessBoard.length; i++) {
-			for (int j = 0; j < chessBoard.length; j++) {
-				if ((i + 4) < n && (j + 4) < n) {
-					if ((chessBoard[i][j].equals("o") 
-					  && chessBoard[i][j + 1].equals("o")
-					  && chessBoard[i][j + 2].equals("o") 
-					  && chessBoard[i][j + 3].equals("o")
-					  && chessBoard[i][j + 4].equals("o"))
-							|| (chessBoard[i][j].equals("x") 
-							 && chessBoard[i][j + 1].equals("x")
-							 && chessBoard[i][j + 2].equals("x") 
-							 && chessBoard[i][j + 3].equals("x")
-							 && chessBoard[i][j + 4].equals("x"))) {
-						return true;
-					}
-					if ((chessBoard[i][j].equals("o") 
-					  && chessBoard[i + 1][j].equals("o")
-					  && chessBoard[i + 2][j].equals("o") 
-					  && chessBoard[i + 3][j].equals("o")
-					  && chessBoard[i + 4][j].equals("o"))
-							|| (chessBoard[i][j].equals("x") 
-							 && chessBoard[i + 1][j].equals("x")
-							 && chessBoard[i + 2][i].equals("x") 
-							 && chessBoard[i + 3][j].equals("x")
-							 && chessBoard[i + 4][j].equals("x"))) {
-						return true;
-					}
-					if ((chessBoard[i][i].equals("o") 
-					  && chessBoard[i + 1][j + 1].equals("o")
-					  && chessBoard[i + 2][j + 2].equals("o") 
-					  && chessBoard[i + 3][j + 3].equals("o")
-					  && chessBoard[i + 4][j + 4].equals("o"))
-							|| (chessBoard[i][j].equals("x") 
-							 && chessBoard[i + 1][j + 1].equals("x")
-							 && chessBoard[i + 2][j + 2].equals("x") 
-							 && chessBoard[i + 3][i + 3].equals("x")
-							 && chessBoard[i + 4][j + 4].equals("x"))) {
-						return true;
-					}
-					if ((chessBoard[i][i + 4].equals("o") 
-					  && chessBoard[i + 1][j + 3].equals("o")
-					  && chessBoard[i + 2][j + 2].equals("o") 
-					  && chessBoard[i + 3][j + 1].equals("o")
-					  && chessBoard[i + 4][j].equals("o"))
-							|| (chessBoard[i][j + 4].equals("x") 
-							 && chessBoard[i + 1][j + 3].equals("x")
-							 && chessBoard[i + 2][j + 2].equals("x") 
-							 && chessBoard[i + 3][i + 1].equals("x")
-							 && chessBoard[i + 4][j].equals("x"))) {
-						return true;
-					}
+		for (int i = 0; i < chessBoard.length -4; i++) {
+			for (int j = 0; j < chessBoard.length - 4; j++) {
+				if ((chessBoard[i][j].equals("o") 
+				  && chessBoard[i][j + 1].equals("o")
+				  && chessBoard[i][j + 2].equals("o") 
+				  && chessBoard[i][j + 3].equals("o")
+				  && chessBoard[i][j + 4].equals("o"))
+						|| (chessBoard[i][j].equals("x") 
+						 && chessBoard[i][j + 1].equals("x")
+						 && chessBoard[i][j + 2].equals("x") 
+						 && chessBoard[i][j + 3].equals("x")
+						 && chessBoard[i][j + 4].equals("x"))) {
+					return true;
+				}
+				if ((chessBoard[i][j].equals("o") 
+				  && chessBoard[i + 1][j].equals("o")
+				  && chessBoard[i + 2][j].equals("o") 
+				  && chessBoard[i + 3][j].equals("o")
+				  && chessBoard[i + 4][j].equals("o"))
+						|| (chessBoard[i][j].equals("x") 
+						 && chessBoard[i + 1][j].equals("x")
+						 && chessBoard[i + 2][i].equals("x") 
+						 && chessBoard[i + 3][j].equals("x")
+						 && chessBoard[i + 4][j].equals("x"))) {
+					return true;
+				}
+				if ((chessBoard[i][i].equals("o") 
+				  && chessBoard[i + 1][j + 1].equals("o")
+				  && chessBoard[i + 2][j + 2].equals("o") 
+				  && chessBoard[i + 3][j + 3].equals("o")
+				  && chessBoard[i + 4][j + 4].equals("o"))
+						|| (chessBoard[i][j].equals("x") 
+						 && chessBoard[i + 1][j + 1].equals("x")
+						 && chessBoard[i + 2][j + 2].equals("x") 
+						 && chessBoard[i + 3][i + 3].equals("x")
+						 && chessBoard[i + 4][j + 4].equals("x"))) {
+					return true;
+				}
+				if ((chessBoard[i][i + 4].equals("o") 
+				  && chessBoard[i + 1][j + 3].equals("o")
+				  && chessBoard[i + 2][j + 2].equals("o") 
+				  && chessBoard[i + 3][j + 1].equals("o")
+				  && chessBoard[i + 4][j].equals("o"))
+						|| (chessBoard[i][j + 4].equals("x") 
+						 && chessBoard[i + 1][j + 3].equals("x")
+						 && chessBoard[i + 2][j + 2].equals("x") 
+						 && chessBoard[i + 3][i + 1].equals("x")
+						 && chessBoard[i + 4][j].equals("x"))) {
+					return true;
 				}
 			}
 		}
