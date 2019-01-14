@@ -23,13 +23,14 @@ public class _009_GomokuGame {
 		Scanner scan = new Scanner(System.in);
 		boolean endFlag = false;
 		boolean winFlag = false;
+		String winner = "";
+		String chess = "";
 		String player = "player1";
+		String stepInfo = "";
 		int i = 0;
 		int j = 0;
-		String stepInfo = "";
 		int failStep = 0;
-		String winner = "";
-
+		
 		while (!endFlag && !winFlag) {
 			System.out.println(player + "的回合!");
 			printChessBoard(chessBoard);
@@ -55,11 +56,12 @@ public class _009_GomokuGame {
 				continue;
 			} else {
 				if (player.equals("player1")) {
-					chessBoard[i - 1][j - 1] = "o";
+					chess = "o";
 				} else {
-					chessBoard[i - 1][j - 1] = "x";
+					chess = "x";
 				}
-				if (checkWin(chessBoard, n)) {
+				chessBoard[i - 1][j - 1] = chess;
+				if (checkWin(chessBoard, n, chess)) {
 					winner = player;
 					winFlag = true;
 					System.out.println("最终棋局为：");
@@ -73,56 +75,36 @@ public class _009_GomokuGame {
 		scan.close();
 	}
 
-	//请问怎么优化，感觉好蠢
-	public boolean checkWin(String[][] chessBoard, int n) {
+	//请问怎么优化，感觉有点蠢
+	public boolean checkWin(String[][] chessBoard, int n, String chess) {
 		for (int i = 0; i < chessBoard.length -4; i++) {
 			for (int j = 0; j < chessBoard.length - 4; j++) {
-				if ((chessBoard[i][j].equals("o") 
-				  && chessBoard[i][j + 1].equals("o")
-				  && chessBoard[i][j + 2].equals("o") 
-				  && chessBoard[i][j + 3].equals("o")
-				  && chessBoard[i][j + 4].equals("o"))
-						|| (chessBoard[i][j].equals("x") 
-						 && chessBoard[i][j + 1].equals("x")
-						 && chessBoard[i][j + 2].equals("x") 
-						 && chessBoard[i][j + 3].equals("x")
-						 && chessBoard[i][j + 4].equals("x"))) {
+				if ((chessBoard[i][j].equals(chess) 
+				  && chessBoard[i][j + 1].equals(chess)
+				  && chessBoard[i][j + 2].equals(chess) 
+				  && chessBoard[i][j + 3].equals(chess)
+				  && chessBoard[i][j + 4].equals(chess))){
 					return true;
 				}
-				if ((chessBoard[i][j].equals("o") 
-				  && chessBoard[i + 1][j].equals("o")
-				  && chessBoard[i + 2][j].equals("o") 
-				  && chessBoard[i + 3][j].equals("o")
-				  && chessBoard[i + 4][j].equals("o"))
-						|| (chessBoard[i][j].equals("x") 
-						 && chessBoard[i + 1][j].equals("x")
-						 && chessBoard[i + 2][i].equals("x") 
-						 && chessBoard[i + 3][j].equals("x")
-						 && chessBoard[i + 4][j].equals("x"))) {
+				if ((chessBoard[i][j].equals(chess) 
+				  && chessBoard[i + 1][j].equals(chess)
+				  && chessBoard[i + 2][j].equals(chess) 
+				  && chessBoard[i + 3][j].equals(chess)
+				  && chessBoard[i + 4][j].equals(chess))) {
 					return true;
 				}
-				if ((chessBoard[i][i].equals("o") 
-				  && chessBoard[i + 1][j + 1].equals("o")
-				  && chessBoard[i + 2][j + 2].equals("o") 
-				  && chessBoard[i + 3][j + 3].equals("o")
-				  && chessBoard[i + 4][j + 4].equals("o"))
-						|| (chessBoard[i][j].equals("x") 
-						 && chessBoard[i + 1][j + 1].equals("x")
-						 && chessBoard[i + 2][j + 2].equals("x") 
-						 && chessBoard[i + 3][i + 3].equals("x")
-						 && chessBoard[i + 4][j + 4].equals("x"))) {
+				if ((chessBoard[i][i].equals(chess) 
+				  && chessBoard[i + 1][j + 1].equals(chess)
+				  && chessBoard[i + 2][j + 2].equals(chess) 
+				  && chessBoard[i + 3][j + 3].equals(chess)
+				  && chessBoard[i + 4][j + 4].equals(chess))) {
 					return true;
 				}
-				if ((chessBoard[i][i + 4].equals("o") 
-				  && chessBoard[i + 1][j + 3].equals("o")
-				  && chessBoard[i + 2][j + 2].equals("o") 
-				  && chessBoard[i + 3][j + 1].equals("o")
-				  && chessBoard[i + 4][j].equals("o"))
-						|| (chessBoard[i][j + 4].equals("x") 
-						 && chessBoard[i + 1][j + 3].equals("x")
-						 && chessBoard[i + 2][j + 2].equals("x") 
-						 && chessBoard[i + 3][i + 1].equals("x")
-						 && chessBoard[i + 4][j].equals("x"))) {
+				if ((chessBoard[i][i + 4].equals(chess) 
+				  && chessBoard[i + 1][j + 3].equals(chess)
+				  && chessBoard[i + 2][j + 2].equals(chess) 
+				  && chessBoard[i + 3][j + 1].equals(chess)
+				  && chessBoard[i + 4][j].equals(chess))) {
 					return true;
 				}
 			}
@@ -159,46 +141,6 @@ public class _009_GomokuGame {
 	}
 
 	public static void main(String[] args) {
-		int n = 19;
-		new _009_GomokuGame().startGomokuGame(n);
-
-//		String[][] chessBoard = new String[n][n];
-//		for (int i = 0; i < chessBoard.length; i++) {
-//			for (int j = 0; j < n; j++) {
-//				chessBoard[i][j] = ".";
-//			}
-//		}
-
-//		chessBoard[0][1] = "o";
-//		chessBoard[0][2] = "o";
-//		chessBoard[0][3] = "o";
-//		chessBoard[0][4] = "o";
-//		chessBoard[0][5] = "o";
-//		new _009_GomokuGame().printChessBoard(chessBoard);
-//		System.out.println(new _009_GomokuGame().checkWin(chessBoard, n));
-
-//		chessBoard[1][0] = "o";
-//		chessBoard[2][0] = "o";
-//		chessBoard[3][0] = "o";
-//		chessBoard[4][0] = "o";
-//		chessBoard[5][0] = "o";
-//		new _009_GomokuGame().printChessBoard(chessBoard);
-//		System.out.println(new _009_GomokuGame().checkWin(chessBoard, n));
-
-//		chessBoard[1][1] = "o";
-//		chessBoard[2][2] = "o";
-//		chessBoard[3][3] = "o";
-//		chessBoard[4][4] = "o";
-//		chessBoard[5][5] = "o";
-//		new _009_GomokuGame().printChessBoard(chessBoard);
-//		System.out.println(new _009_GomokuGame().checkWin(chessBoard, n));
-
-//		chessBoard[1][5] = "o";
-//		chessBoard[2][4] = "o";
-//		chessBoard[3][3] = "o";
-//		chessBoard[4][2] = "o";
-//		chessBoard[5][1] = "o";
-//		new _009_GomokuGame().printChessBoard(chessBoard);
-//		System.out.println(new _009_GomokuGame().checkWin(chessBoard, n));
+		new _009_GomokuGame().startGomokuGame(19);
 	}
 }
