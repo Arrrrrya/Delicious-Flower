@@ -29,55 +29,55 @@ public class _009_GomokuGame {
 		boolean winFlag = false;
 		String winner = "";
 		String chess = "";
-		String player = player1;
+		String currentPlayer = player1;
 		String stepInfo = "";
 		int i = 0;
 		int j = 0;
 		int failStep = 0;
-		
+
 		while (!endFlag && !winFlag) {
-			System.out.println(player + " 的回合!");
+			System.out.println(currentPlayer + " 的回合!");
 			printChessBoard(chessBoard);
 			stepInfo = scan.nextLine();
 			try {
 				i = Integer.parseInt(stepInfo.split(" ")[0]);
 				j = Integer.parseInt(stepInfo.split(" ")[1]);
 			} catch (Exception e) {
-				System.out.println(player + " 已经弃权！");
+				System.out.println(currentPlayer + " 已经弃权！");
 				endFlag = true;
-				winner = switchPlayer(player);
+				winner = switchPlayer(currentPlayer);
 				break;
 			}
 			if (!stepIsOK(chessBoard, n, i, j)) {
-				System.out.println(player + " 第" + (failStep + 1) + "次落子无效");
+				System.out.println(currentPlayer + " 第" + (failStep + 1) + "次落子无效");
 				failStep++;
 				if (failStep == 2) {
-					System.out.println(player + " 2次落子无效，直接判负！");
+					System.out.println(currentPlayer + " 2次落子无效，直接判负！");
 					endFlag = true;
-						winner = switchPlayer(player);
+					winner = switchPlayer(currentPlayer);
 					break;
 				}
 				continue;
 			} else {
-				if (player.equals("player1")) {
+				if (currentPlayer.equals(player1)) {
 					chess = chess1;
 				} else {
 					chess = chess2;
 				}
 				chessBoard[i - 1][j - 1] = chess;
 				if (checkWin(chessBoard, n, chess)) {
-					winner = player;
+					winner = currentPlayer;
 					winFlag = true;
 					System.out.println("最终棋局为：");
 					printChessBoard(chessBoard);
 					break;
 				}
-				player = switchPlayer(player);
+				currentPlayer = switchPlayer(currentPlayer);
 			}
 		}
-		if(endFlag) {
+		if (endFlag) {
 			System.out.println(winner + " 获胜");
-		}else if(winFlag) {
+		} else if (winFlag) {
 			System.out.println(winner + " 战胜了 " + (winner.equals(player1) ? switchPlayer(winner) : player1) + "!");
 		}
 		scan.close();
