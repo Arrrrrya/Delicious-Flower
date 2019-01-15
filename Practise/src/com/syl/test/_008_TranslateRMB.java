@@ -9,7 +9,7 @@ import java.util.Map;
  * @author syl
  * @syl the bug is not what you see,but what it is.
  */
-public class _008_translateRMB {
+public class _008_TranslateRMB {
 
 	public String transRMBFromNumbertoChinese(String inPutRmb) {
 		Map<String, String> rmbMap = new HashMap<String, String>();
@@ -64,6 +64,6 @@ public class _008_translateRMB {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(new _008_translateRMB().transRMBFromNumbertoChinese("10000.321"));
+		System.out.println(new _008_TranslateRMB().transRMBFromNumbertoChinese("10000.321"));
 	}
 }
