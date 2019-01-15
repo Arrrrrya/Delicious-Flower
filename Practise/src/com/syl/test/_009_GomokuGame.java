@@ -85,7 +85,7 @@ public class _009_GomokuGame {
 
 	//请问怎么优化，感觉有点蠢
 	public boolean checkWin(String[][] chessBoard, int n, String chess) {
-		for (int i = 0; i < chessBoard.length -4; i++) {
+		for (int i = 0; i < chessBoard.length - 4; i++) {
 			for (int j = 0; j < chessBoard.length - 4; j++) {
 				if ((chessBoard[i][j].equals(chess) 
 				  && chessBoard[i][j + 1].equals(chess)
@@ -141,7 +141,7 @@ public class _009_GomokuGame {
 		for (int i = 0; i < chessBoard.length; i++) {
 			for (int j = 0; j < chessBoard.length; j++) {
 				System.out.print(chessBoard[i][j]);
-				if (j == 18) {
+				if (j == chessBoard.length - 1) {
 					System.out.println();
 				}
 			}
