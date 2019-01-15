@@ -10,11 +10,11 @@ package com.syl.test;
  */
 public class _012_ClazzDemo {
 	public static void main(String[] args) {
-		new People("张三").run();
+		new People("aaron").run();
 
-		new People("张三").new Student("李四").study();
+		new People("arya").new Student("buck").study();
 
-		new People("张三").new Student("李四").run();
+		new People("arya").new Student("buck").run();
 	}
 }
 
