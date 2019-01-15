@@ -8,7 +8,7 @@ package com.syl.test;
  * @author syl(sun_mir@qq.com)
  * @syl the bug is not what you see,but what it is.
  */
-public class _012_ClazzDemo {
+public class _988_ClazzDemo {
 	public static void main(String[] args) {
 		new People("aaron").run();
 
