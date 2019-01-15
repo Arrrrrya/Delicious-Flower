@@ -8,17 +8,17 @@ package com.syl.test;
  * @author syl(sun_mir@qq.com)
  * @syl the bug is not what you see,but what it is.
  */
-public class _011_StudentDemo2 {
+public class _989_StudentDemo2 {
 	public static void main(String[] args) {
-		_010_StudentDemo[] students = new _010_StudentDemo[3];
-		students[0] = new _010_StudentDemo("arya");
-		students[1] = new _010_StudentDemo("arya");
-		students[2] = new _010_StudentDemo("syl");
+		_990_StudentDemo[] students = new _990_StudentDemo[3];
+		students[0] = new _990_StudentDemo("arya");
+		students[1] = new _990_StudentDemo("arya");
+		students[2] = new _990_StudentDemo("syl");
 
-		new _011_StudentDemo2().find(students, "syl");
+		new _989_StudentDemo2().find(students, "syl");
 	}
 
-	public void find(_010_StudentDemo[] students, String name) {
+	public void find(_990_StudentDemo[] students, String name) {
 		int count = 0;
 		for (int i = 0; i < students.length; i++) {
 			if (students[i].getName().equals(name)) {

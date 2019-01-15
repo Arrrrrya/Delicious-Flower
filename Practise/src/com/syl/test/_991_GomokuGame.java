@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author syl(sun_mir@qq.com)
  * @syl the bug is not what you see,but what it is.
  */
-public class _009_GomokuGame {
+public class _991_GomokuGame {
 	public String chess1 = "o";
 	public String chess2 = "x";
 	public String player1 = "player1";
@@ -149,6 +149,6 @@ public class _009_GomokuGame {
 	}
 
 	public static void main(String[] args) {
-		new _009_GomokuGame().startGomokuGame(19);
+		new _991_GomokuGame().startGomokuGame(19);
 	}
 }

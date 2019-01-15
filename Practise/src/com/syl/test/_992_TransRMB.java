@@ -8,7 +8,7 @@ import java.math.*;
  * @author https://www.nowcoder.com/profile/123295334
  * @syl the bug is not what you see,but what it is.
  */
-public class _008_TransRMB {
+public class _992_TransRMB {
 	public String[] RMBNumber = { "Áã", "Ò¼", "·¡", "Èþ", "ËÁ", "Îé", "Â½", "Æâ", "°Æ", "¾Á", "Ê°", "°Û", "Çª", "Íò", "ÒÚ" };
 
 	public String conversion(double inputMoney) {
@@ -81,7 +81,7 @@ public class _008_TransRMB {
 	}
 
 	public static void main(String[] args) {
-		_008_TransRMB test = new _008_TransRMB();
+		_992_TransRMB test = new _992_TransRMB();
 		System.out.println(test.conversion(151121.15));
 
 	}

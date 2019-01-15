@@ -8,7 +8,7 @@ package com.syl.test;
  * @author https://blog.csdn.net/yangxiucheng520/article/details/77097269
  * @syl the bug is not what you see,but what it is.
  */
-public class _006_Circle {
+public class _994_PrintCircle {
 
 	public void getCircle(int r) {
 		// to 定义y为圆的纵坐标,其中y=y+2是让设置纵坐标的步长，可以调整椭圆的“胖瘦”
@@ -27,7 +27,7 @@ public class _006_Circle {
 	}
 
 	public static void main(String[] args) {
-		new _006_Circle().getCircle(5);
+		new _994_PrintCircle().getCircle(5);
 
 	}
 

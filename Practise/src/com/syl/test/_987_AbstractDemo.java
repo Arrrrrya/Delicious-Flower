@@ -1,6 +1,6 @@
 package com.syl.test;
 
-public class _013_AbstractDemo {
+public class _987_AbstractDemo {
 	public static void main(String[] args) {
 		Vehicle Tru = new Truck();
 		Tru.function();

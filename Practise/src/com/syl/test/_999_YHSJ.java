@@ -16,7 +16,7 @@ package com.syl.test;
  * @syl the bug is not what you see,but what it is.
  *
  */
-public class _001_YHSJ {
+public class _999_YHSJ {
 
 	public void getYHSJ(int n) {
 		int[][] arr = new int[n][];
@@ -36,6 +36,6 @@ public class _001_YHSJ {
 
 	public static void main(String[] args) {
 		int n = 10;
-		new _001_YHSJ().getYHSJ(n);
+		new _999_YHSJ().getYHSJ(n);
 	}
 }

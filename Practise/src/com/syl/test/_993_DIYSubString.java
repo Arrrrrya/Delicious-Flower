@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author syl
  * @syl the bug is not what you see,but what it is.
  */
-public class _007_DIYSubString {
+public class _993_DIYSubString {
 
 	public String mySubString(String strToBeSub, int beginByteIndex, int endByteIndex) {
 		if (null == strToBeSub || "" == strToBeSub || beginByteIndex < 0 || beginByteIndex > endByteIndex) {
@@ -65,7 +65,7 @@ public class _007_DIYSubString {
 
 	public static void main(String[] args) {
 //		System.out.println(new _007_DIYSubString().mySubString("bugIsbug", 3, 5));
-		System.out.println(new _007_DIYSubString().mySubString("虫子is虫子", 0, 1));
+		System.out.println(new _993_DIYSubString().mySubString("虫子is虫子", 0, 1));
 	}
 
 }

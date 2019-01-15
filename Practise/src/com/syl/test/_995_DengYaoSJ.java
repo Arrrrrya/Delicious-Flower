@@ -10,7 +10,7 @@ package com.syl.test;
  * @author syl
  * @syl the bug is not what you see,but what it is.
  */
-public class _005_DengYaoSJ {
+public class _995_DengYaoSJ {
 	public void getDengYaoSJ(int n) {
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= (n - i); j++) {
@@ -25,6 +25,6 @@ public class _005_DengYaoSJ {
 	}
 
 	public static void main(String[] args) {
-		new _005_DengYaoSJ().getDengYaoSJ(5);
+		new _995_DengYaoSJ().getDengYaoSJ(5);
 	}
 }

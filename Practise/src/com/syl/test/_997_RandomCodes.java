@@ -10,7 +10,7 @@ import java.util.Random;
  * @syl the bug is not what you see,but what it is.
  * 
  */
-public class _003_RandomCodes {
+public class _997_RandomCodes {
 
 	public void getRandomCodes() {
 		ArrayList<String> codes = new ArrayList<String>();
@@ -55,8 +55,8 @@ public class _003_RandomCodes {
 	}
 
 	public static void main(String[] args) {
-		new _003_RandomCodes().getRandomCodes();
-		new _003_RandomCodes().getRandomCodesBySize(6);
+		new _997_RandomCodes().getRandomCodes();
+		new _997_RandomCodes().getRandomCodesBySize(6);
 	}
 
 }

@@ -8,7 +8,7 @@ package com.syl.test;
  * @author syl(sun_mir@qq.com)
  * @syl the bug is not what you see,but what it is.
  */
-public class _010_StudentDemo {
+public class _990_StudentDemo {
 	private String name;
 	private int age;
 	private String gender;
@@ -20,11 +20,11 @@ public class _010_StudentDemo {
 		System.out.println("do nothing");
 	}
 
-	public _010_StudentDemo() {
+	public _990_StudentDemo() {
 		super();
 	}
 
-	public _010_StudentDemo(String name, int age, String gender, String phone, String address, String email) {
+	public _990_StudentDemo(String name, int age, String gender, String phone, String address, String email) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -34,7 +34,7 @@ public class _010_StudentDemo {
 		this.email = email;
 	}
 
-	public _010_StudentDemo(String name) {
+	public _990_StudentDemo(String name) {
 		super();
 		this.name = name;
 	}

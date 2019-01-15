@@ -19,7 +19,7 @@ import com.syl.util.DateToWeekUtil;
  * @syl the bug is not what you see,but what it is.
  *
  */
-public class _002_WNcalendar {
+public class _998_WNcalendar {
 
 	private void getWnCalendar(int year, int month) {
 		boolean isRunNianFlag;
@@ -103,6 +103,6 @@ public class _002_WNcalendar {
 		int month = scan.nextInt();
 		scan.close();
 
-		new _002_WNcalendar().getWnCalendar(year, month);
+		new _998_WNcalendar().getWnCalendar(year, month);
 	}
 }

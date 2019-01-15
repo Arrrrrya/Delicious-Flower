@@ -6,7 +6,7 @@ package com.syl.test;
  * @author syl
  * @syl the bug is not what you see,but what it is.
  */
-public class _004_ChengFaBiao {
+public class _996_ChengFaBiao {
 	public void getChengFaBiao(int n) {
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= i; j++) {
@@ -20,6 +20,6 @@ public class _004_ChengFaBiao {
 	}
 
 	public static void main(String[] args) {
-		new _004_ChengFaBiao().getChengFaBiao(9);
+		new _996_ChengFaBiao().getChengFaBiao(9);
 	}
 }
