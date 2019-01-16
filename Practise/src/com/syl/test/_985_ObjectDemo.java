@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * @author syl(sun_mir@qq.com)
  * @syl the bug is not what you see,but what it is.
  */
-public class _085_ObjectDemo {
+public class _985_ObjectDemo {
 
 	public void separateString(String str) {
 
@@ -77,8 +77,8 @@ public class _085_ObjectDemo {
 	}
 
 	public static void main(String[] args) {
-		new _085_ObjectDemo().separateString("AB2C3D4ESF6G7H8");
+		new _985_ObjectDemo().separateString("AB2C3D4ESF6G7H8");
 
-		new _085_ObjectDemo().separateStr("AB2C3D4ESF6G7H8");
+		new _985_ObjectDemo().separateStr("AB2C3D4ESF6G7H8");
 	}
 }
