@@ -1,6 +1,10 @@
 package com.syl.test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 
@@ -12,8 +16,7 @@ import java.util.Arrays;
  */
 public class _085_ObjectDemo {
 
-	public Object[] separateString(String str) {
-		Object[] result = new Object[2];
+	public void separateString(String str) {
 
 		int intArrayLen = 0;
 		int StringArrayLen = 0;
@@ -46,16 +49,36 @@ public class _085_ObjectDemo {
 				strArray[StringArrayLen - 1] = temString;
 			}
 		}
+		System.out.println(Arrays.toString(intArray));
+		System.out.println(Arrays.toString(strArray));
 
-		result[0] = intArray;
-		result[1] = strArray;
-		return result;
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void separateStr(String str) {
+		List intList = new ArrayList<>();
+		List stringList = new ArrayList<>();
+
+		Pattern pattern1 = Pattern.compile("\\d"); // Æ¥ÅäÊý×Ö
+		Pattern pattern2 = Pattern.compile("\\D"); // Æ¥Åä·ÇÊý×Ö
+
+		Matcher m1 = pattern1.matcher(str);
+		Matcher m2 = pattern2.matcher(str);
+
+		while (m1.find()) {
+			intList.add(m1.group());
+		}
+		System.out.println(Arrays.toString(intList.toArray()));
+
+		while (m2.find()) {
+			stringList.add(m2.group());
+		}
+		System.out.println(Arrays.toString(stringList.toArray()));
 	}
 
 	public static void main(String[] args) {
-		int[] intArray = (int[]) new _085_ObjectDemo().separateString("AB2C3D4ESF6G7H8")[0];
-		System.out.println(Arrays.toString(intArray));
-		String[] strArray = (String[]) new _085_ObjectDemo().separateString("AB2C3D4ESF6G7H8")[1];
-		System.out.println(Arrays.toString(strArray));
+		new _085_ObjectDemo().separateString("AB2C3D4ESF6G7H8");
+
+		new _085_ObjectDemo().separateStr("AB2C3D4ESF6G7H8");
 	}
 }
