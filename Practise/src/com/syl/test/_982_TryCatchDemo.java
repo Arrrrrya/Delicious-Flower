@@ -9,6 +9,10 @@ package com.syl.test;
  * @syl the bug is not what you see,but what it is.
  */
 public class _982_TryCatchDemo {
+	
+	static {
+		System.out.println("test static");
+	}
 
 	static void testTryCatch() {
 		try {
