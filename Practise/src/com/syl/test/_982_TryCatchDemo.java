@@ -1,5 +1,13 @@
 package com.syl.test;
 
+/**
+ * 
+ * @question test for try/catch/finally/Exception
+ * @link  
+ *
+ * @author syl(sun_mir@qq.com)
+ * @syl the bug is not what you see,but what it is.
+ */
 public class _982_TryCatchDemo {
 
 	static void testTryCatch() {
