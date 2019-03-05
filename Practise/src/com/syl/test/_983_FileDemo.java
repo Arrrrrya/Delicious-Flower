@@ -36,13 +36,11 @@ public class _983_FileDemo {
 			if (file.exists()) {
 				file.delete();
 			}
-			FileWriter out = new FileWriter(file, true);
-			String data = "";
-			for (int i = 0; i < fileList.size(); i++) {
-				data = fileList.get(i);
-				out.write(data + "\r\n");
+			FileWriter fileWriter = new FileWriter(file, true);
+			for (String fileName : fileList) {
+				fileWriter.write(fileName + "\r\n");
 			}
-			out.close();
+			fileWriter.close();
 			System.out.println("\nall fileNames are written into " + file.getAbsolutePath());
 		} catch (IOException e) {
 			System.err.println(e.toString());
@@ -54,8 +52,8 @@ public class _983_FileDemo {
 		ArrayList<String> fileList = new ArrayList<String>();
 		new _983_FileDemo().getAllFileName(filePath, fileList);
 
-		for (int i = 0; i < fileList.size(); i++) {
-			System.out.println(fileList.get(i));
+		for (String f : fileList) {
+			System.out.println(f);
 		}
 
 		if (!fileList.isEmpty()) {
