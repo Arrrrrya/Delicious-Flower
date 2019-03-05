@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * 
@@ -15,10 +14,10 @@ import java.util.Arrays;
  * @syl the bug is not what you see,but what it is.
  */
 public class _983_FileDemo {
-	public void getAllFileName(String path, ArrayList<String> fileName) {
+	void getAllFileName(String path, ArrayList<String> fileName) {
 		File file = new File(path);
 		if (!file.exists()) {
-			System.out.println("wrong path !");
+			System.err.println("wrong path !");
 			return;
 		}
 
@@ -46,8 +45,7 @@ public class _983_FileDemo {
 			out.close();
 			System.out.println("\nall fileNames are written into " + file.getAbsolutePath());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println(e.toString());
 		}
 	}
 
@@ -60,9 +58,9 @@ public class _983_FileDemo {
 			System.out.println(fileList.get(i));
 		}
 
-		String resultFile = "D:\\z.txt";
-		new _983_FileDemo().writeToFile(resultFile, fileList);
-
+		if (!fileList.isEmpty()) {
+			String resultFile = "D:\\z.txt";
+			new _983_FileDemo().writeToFile(resultFile, fileList);
+		}
 	}
-
 }
