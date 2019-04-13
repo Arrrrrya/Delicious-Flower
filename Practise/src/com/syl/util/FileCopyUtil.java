@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+import org.apache.log4j.Logger;
+
 /**
  * 
  * @question 复制5000本csr文件，每本csr中只有2处ID不同，0001-5000顺序自增
@@ -20,6 +22,7 @@ import java.io.OutputStreamWriter;
  * @syl the bug is not what you see,but what it is.
  */
 public class FileCopyUtil {
+	private static Logger logger = Logger.getLogger(FileCopyUtil.class);
 	static String encoding = "UTF-8";
 
 	public static void main(String[] args) {
@@ -30,9 +33,9 @@ public class FileCopyUtil {
 
 		if (srcFile.isFile()) {
 			nowTime = System.currentTimeMillis();
-			System.out.println("start to copy...");
+			logger.info("start to copy...");
 		} else {
-			System.err.println("pls check src file");
+			logger.error("pls check src file");
 			return;
 		}
 
@@ -59,14 +62,14 @@ public class FileCopyUtil {
 			try {
 				temp.createNewFile();
 				copyFile(srcFile, temp);
-				System.out.println("copy: " + temp.getPath());
+				logger.info("copy: " + temp.getPath());
 				updateFile(temp.getPath(), fileCount);
 			} catch (IOException e) {
-				System.err.println(e.toString());
+				logger.error(e.toString());
 			}
 		}
 
-		System.out.println("finish copy, cost time: " + (System.currentTimeMillis() - nowTime) + " ms");
+		logger.info("finish copy, cost time: " + (System.currentTimeMillis() - nowTime) + " ms");
 	}
 
 	private static void copyFile(File srcFile, File targetFile) throws IOException {
