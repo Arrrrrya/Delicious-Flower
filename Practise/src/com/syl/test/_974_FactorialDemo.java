@@ -21,7 +21,7 @@ public class _974_FactorialDemo {
 		} else {
 			long result = n;
 			while (n - 1 > 0) {
-				result = (result * (n - 1));
+				result *= (n - 1);
 				n = n - 1;
 			}
 			return result;
