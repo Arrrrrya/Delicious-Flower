@@ -16,15 +16,15 @@ public class _974_FactorialDemo {
 	}
 
 	static long factorial(long n) {
-		if (n < 0) {
-			return -1;
-		} else {
+		if (n > 0) {
 			long result = n;
 			while (n - 1 > 0) {
 				result *= (n - 1);
 				n = n - 1;
 			}
 			return result;
+		} else {
+			return -1;
 		}
 	}
 
