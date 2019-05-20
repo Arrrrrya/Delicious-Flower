@@ -6,7 +6,7 @@ package com.syl.test;
  * @author sunyl
  *
  */
-public class _968_MathDemo {
+public class _968_StringDemo {
 
 	public static void main(String[] args) {
 		
