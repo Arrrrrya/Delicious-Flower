@@ -21,15 +21,12 @@ public class _968_StringDemo {
 	}
 
 	static void doCount(String string) {
-		ArrayList<Character> cList = new ArrayList<>();
+		char[] arr = string.toCharArray();
 		int word = 0;
 		int blank = 0;
 		int number = 0;
 		int other = 0;
-		for (int i = 0; i < string.length(); i++) {
-			cList.add(string.charAt(i));
-		}
-		for (Character character : cList) {
+		for (Character character : arr) {
 			if (character >= 48 && character <= 57) {
 				number++;
 			} else if ((character >= 65 && character <= 90) || (character >= 97 && character <= 122)) {
