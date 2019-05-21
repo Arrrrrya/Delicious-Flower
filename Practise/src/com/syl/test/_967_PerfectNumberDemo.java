@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class _967_PerfectNumberDemo {
 
 	public static void main(String[] args) {
-		int n = 10000;
+		int n = 100000;
 		ArrayList<Integer> perfectList = new ArrayList<>();
 		for (int i = 1; i <= n; i++) {
 			getPerfectNumber(i, perfectList);
@@ -21,7 +21,7 @@ public class _967_PerfectNumberDemo {
 
 	static void getPerfectNumber(int n, ArrayList<Integer> perfectList) {
 		int count = 0;
-		for (int i = 1; i < n; i++) {
+		for (int i = 1; i < (n/2+1); i++) {
 			if ((n % i == 0)) {
 				count += i;
 			}
