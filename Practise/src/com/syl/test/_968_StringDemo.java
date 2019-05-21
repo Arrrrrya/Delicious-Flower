@@ -1,6 +1,5 @@
 package com.syl.test;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
