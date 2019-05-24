@@ -1,5 +1,13 @@
 package com.syl.test;
 
+/**
+ * String, StringBuffer, stringBuilder的拼接字符串的速度
+ * String是字符串常量，StringBuffer和stringBuilder是字符串变量
+ * StringBuffer线程安全，stringBuilder线程不安全
+ * 
+ * @author sunyl
+ *
+ */
 public class _962_StringBuilderDemo {
 
 	public static void main(String[] args) {
