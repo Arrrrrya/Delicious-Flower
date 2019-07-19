@@ -10,7 +10,7 @@ public class DivisionUtil {
 		System.out.println(doDivision(5, 0, 0));// ERROR
 	}
 
-	static String doDivision(int fenZi, int fenMu, int remainNumber) {
+	public static String doDivision(double fenZi, double fenMu, int remainNumber) {
 		if (fenMu == 0) {
 			System.err.println("ERROR: the end param cannot be ZERO !");
 			return "";
