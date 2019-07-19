@@ -7,9 +7,15 @@ public class DivisionUtil {
 		System.out.println(doDivision(-2, -3, 3));// 0.667
 		System.out.println(doDivision(20, 2, 3));// 10.000
 		System.out.println(doDivision(5, 8, 0));// 1
+		System.out.println(doDivision(5, 0, 0));// ERROR
 	}
 
 	static String doDivision(int fenZi, int fenMu, int remainNumber) {
+		if (fenMu == 0) {
+			System.err.println("ERROR: the end param cannot be ZERO !");
+			return "";
+		}
+		
 		if (remainNumber < 0) {
 			System.err.println("ERROR: the 3rd param [" + remainNumber + "] is invalid !");
 			return "";
