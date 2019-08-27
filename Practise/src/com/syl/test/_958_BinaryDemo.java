@@ -12,6 +12,12 @@ public class _958_BinaryDemo {
 		byte c = -128;
 		byte d = --c;
 		System.out.println(d);// 127
+		
+		int e = 8;
+		System.out.println(e << 3);// 64
+		System.out.println(e >> 3);// 1
+		System.out.println(e >>> 3);// 1 无符号右移
+		
 
 	}
 
