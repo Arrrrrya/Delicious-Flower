@@ -3,22 +3,22 @@ package com.syl.test_951_1000;
 import java.math.*;
 
 /**
- * to±àĞ´Ò»¸ö³ÌĞò,½«¸¡µãÊı×ª»»³ÉÈËÃñ±Ò¶Á·¨×Ö·û´®,ÀıÈç,½«1006.333×ª»»ÎªÒ¼Ç§ÁãÂ½ÔªÈş½Ç¡£
+ * toç¼–å†™ä¸€ä¸ªç¨‹åº,å°†æµ®ç‚¹æ•°è½¬æ¢æˆäººæ°‘å¸è¯»æ³•å­—ç¬¦ä¸²,ä¾‹å¦‚,å°†1006.333è½¬æ¢ä¸ºå£¹åƒé›¶é™†å…ƒåè§’ã€‚
  * 
  * @author https://www.nowcoder.com/profile/123295334
  * @syl the bug is not what you see,but what it is.
  */
 public class _992_TransRMB {
-	public String[] RMBNumber = { "Áã", "Ò¼", "·¡", "Èş", "ËÁ", "Îé", "Â½", "Æâ", "°Æ", "¾Á", "Ê°", "°Û", "Çª", "Íò", "ÒÚ" };
+	public String[] RMBNumber = { "é›¶", "å£¹", "è´°", "å", "è‚†", "ä¼", "é™†", "æŸ’", "æŒ", "ç–", "æ‹¾", "ä½°", "ä»Ÿ", "ä¸‡", "äº¿" };
 
 	public String conversion(double inputMoney) {
 		BigDecimal money = new BigDecimal(inputMoney + "");
-		String transResult = "ÈËÃñ±Ò";
+		String transResult = "äººæ°‘å¸";
 		String[] num = (money + "").split("\\.");
 		System.out.println("integerPart:" + num[0]);
 		System.out.println("decimalPart:" + num[1]);
 
-		String[] integerPart = new String[(int) Math.ceil(num[0].length() * 1.0 / 4)];// Math.ceilÎªÏòÉÏÈ¡Õû
+		String[] integerPart = new String[(int) Math.ceil(num[0].length() * 1.0 / 4)];// Math.ceilä¸ºå‘ä¸Šå–æ•´
 
 		int startIndex = 0;
 		int endIndex = 0;
@@ -38,7 +38,7 @@ public class _992_TransRMB {
 			if (i != integerPart.length - 1) {
 				transResult += RMBNumber[RMBNumber.length - 1 - i - (3 - integerPart.length)];
 			} else {
-				transResult += "Ôª";
+				transResult += "å…ƒ";
 			}
 		}
 
@@ -51,16 +51,16 @@ public class _992_TransRMB {
 		for (int i = 0; i < integerPart.length(); i++) {
 			ans.append(RMBNumber[Integer.valueOf(integerPart.charAt(i) - '0')]);
 			if (Integer.valueOf(integerPart.charAt(i) - '0') == 0) {
-				if (ans.length() >= 2 && ans.charAt(ans.length() - 2) == 'Áã') {
+				if (ans.length() >= 2 && ans.charAt(ans.length() - 2) == 'é›¶') {
 					ans.deleteCharAt(ans.length() - 1);
 				}
 			} else {
 				if (i != integerPart.length() - 1)
 					ans.append(RMBNumber[12 - (4 - integerPart.length()) - i]);
 			}
-			if (ans.length() > 1 && ans.charAt(0) == 'Áã')
+			if (ans.length() > 1 && ans.charAt(0) == 'é›¶')
 				ans.deleteCharAt(0);
-			if (ans.length() > 1 && ans.charAt(ans.length() - 1) == 'Áã')
+			if (ans.length() > 1 && ans.charAt(ans.length() - 1) == 'é›¶')
 				ans.deleteCharAt(ans.length() - 1);
 		}
 		return new String(ans);
@@ -70,12 +70,12 @@ public class _992_TransRMB {
 		String ans = "";
 		String buf = decimalPart.substring(0, 2);
 		if (buf.equals("00"))
-			return "Õû";
+			return "æ•´";
 		else {
 			if (buf.charAt(0) != '0')
-				ans += RMBNumber[Integer.valueOf(decimalPart.charAt(0) - '0')] + "½Ç";
+				ans += RMBNumber[Integer.valueOf(decimalPart.charAt(0) - '0')] + "è§’";
 			if (buf.charAt(1) != 0)
-				ans += RMBNumber[Integer.valueOf(decimalPart.charAt(1) - '0')] + "·Ö";
+				ans += RMBNumber[Integer.valueOf(decimalPart.charAt(1) - '0')] + "åˆ†";
 		}
 		return ans;
 	}

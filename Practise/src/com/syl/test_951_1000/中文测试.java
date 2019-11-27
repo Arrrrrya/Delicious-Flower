@@ -1,20 +1,21 @@
+    
 package com.syl.test_951_1000;
 
 /**
- * .ÖĞÎÄÀàÃû²âÊÔ
+ * .ä¸­æ–‡ç±»åæµ‹è¯•
  * 
  * @author syl
  * @syl the bug is not what you see,but what it is.
  *
  */
-public class ÖĞÎÄ²âÊÔ {
+public class ä¸­æ–‡æµ‹è¯• {
 
-	public void ÊäÈëÖĞÎÄ() {
-		System.out.println("µÚÒ»´ÎÓÃÖĞÎÄÀàÃû£¡");
+	public void è¾“å…¥ä¸­æ–‡() {
+		System.out.println("ç¬¬ä¸€æ¬¡ç”¨ä¸­æ–‡ç±»åï¼");
 	}
 
 	public static void main(String[] args) {
-		ÖĞÎÄ²âÊÔ ÖĞÎÄ²âÊÔ = new ÖĞÎÄ²âÊÔ();
-		ÖĞÎÄ²âÊÔ.ÊäÈëÖĞÎÄ();
+		ä¸­æ–‡æµ‹è¯• ä¸­æ–‡æµ‹è¯• = new ä¸­æ–‡æµ‹è¯•();
+		ä¸­æ–‡æµ‹è¯•.è¾“å…¥ä¸­æ–‡();
 	}
 }
