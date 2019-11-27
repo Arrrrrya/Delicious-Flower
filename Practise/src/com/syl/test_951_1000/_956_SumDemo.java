@@ -25,6 +25,11 @@ public class _956_SumDemo {
 		for (Entry<Integer, Integer> obj : set) {
 			System.out.println(obj.getKey() + " : " + obj.getValue());
 		}
+		
+		int [] result = twoNum(nums, target);
+		for (int i : result) {
+			System.out.println(i);
+		}
 	}
 
 	private static Map<Integer, Integer> getTwoNumbers(int[] nums, int target) {
@@ -35,10 +40,24 @@ public class _956_SumDemo {
 				if (nums[i] + nums[j] == target) {
 					resultMap.put(nums[i], i);
 					resultMap.put(nums[j], j);
+					return resultMap;
 				}
 			}
 		}
-		return resultMap;
+		throw new IllegalArgumentException("not found");
+	}
+	
+	private static int[] twoNum(int[] nums, int target) {
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for (int i = 0; i < nums.length; i++) {
+			map.put(nums[i], i);
+		}
+		for (int i = 0; i < nums.length; i++) {
+			if(map.containsKey(target - nums[i])) {
+				return new int[] {i, map.get(target - nums[i])};
+			}
+		}
+		throw new IllegalArgumentException("not found");
 	}
 
 }
